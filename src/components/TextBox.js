@@ -65,11 +65,11 @@ export default function TextBox(props) {
                 <div className="mb-3">
                     <textarea className="form-control" value={text} onChange={handleOnChange} id="FormControlTextarea1" rows="7" style={{ backgroundColor: props.mode === 'dark' ? '#343a40' : 'white', color: props.mode === 'dark' ? 'white' : 'black' }}></textarea>
                 </div>
-                <button className="btn btn-primary mx-3" onClick={handleUpClick}>Convert to Upper Case</button>
-                <button className="btn btn-primary mx-3" onClick={handleLowClick}>Convert to Lower Case</button>
-                <button className="btn btn-primary mx-3" onClick={handleClear}>Clear</button>
-                <button className="btn btn-primary mx-3" onClick={handleCopy}>Copy Text</button>
-                <button className="btn btn-primary mx-3" onClick={handleExtraSpaces}>Clear Extra Spaces</button>
+                <button className="btn btn-primary mx-3 my-3" onClick={handleUpClick}>Convert to Upper Case</button>
+                <button className="btn btn-primary mx-3 my-3" onClick={handleLowClick}>Convert to Lower Case</button>
+                <button className="btn btn-primary mx-3 my-3" onClick={handleClear}>Clear</button>
+                <button className="btn btn-primary mx-3 my-3" onClick={handleCopy}>Copy Text</button>
+                <button className="btn btn-primary mx-3 my-3" onClick={handleExtraSpaces}>Clear Extra Spaces</button>
 
                 {/* <button className="btn btn-dark mx-3" onClick={toggleStyle}>Dark Mode</button> */}
                 {/* <button type='button' className="btn btn-dark" onClick={toggleStyle}>Dark</button> */}
@@ -78,7 +78,7 @@ export default function TextBox(props) {
                 <h1>
                     Text Summary
                 </h1>
-                <p>{text.split(" ").length} words and {text.length} letters</p>
+                <p>{text.split(" ").filter((element)=>{return element.length!==0}).length} words and {text.length} letters</p>
             </div>
         </>
     )
